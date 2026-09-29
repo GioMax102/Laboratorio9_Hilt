@@ -1,0 +1,17 @@
+¿Qué es inyección de dependencias?
+
+Pasar las piezas por el constructor y que salga solo la parte del programa
+que las contruye. En lugar de que cada objeto fabrique sus propias
+dependiencias, se conecta al enchufe y no le importa de
+donde viene la energía.
+
+¿Para qué sirve la interfaz TareasRepository?
+El "enchufe" que hace la abstracción que usa el TareasViewModel.
+El VM no sabe de dónde vienen las tareas, solo depende de
+la interfaz, permie que existan otras implementaciones y que
+se elija cual usar en un solo lugar (Hilt), ni el VM
+ni la pantalla se enteran del cambio.
+
+¿Qué hace @Binds en un módulo de Hilt?
+Es la forma de conectar una interfaz que Hilt ya sabe construir.
+Se usa dentro de un modulo anotado @Module y @InstallIn(Singleton Component::class)
